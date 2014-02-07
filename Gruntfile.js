@@ -16,7 +16,7 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         // Project paths
-        scaffold: {
+        project: {
             sourceDir: 'src/',
             testDir: 'test/',
             bowerDir: 'bower_components/',
@@ -28,30 +28,27 @@ module.exports = function (grunt) {
             distDir: 'build/dist/'
         },
 
-        // @todo use source maps!
-        // @todo concurrent task
-
         clean: {
-            tmp: ['<%= scaffold.tmpDir %>'],
-            fonts: ['<%= scaffold.sourceDir %>asset/fonts/']
+            tmp: ['<%= project.tmpDir %>'],
+            fonts: ['<%= project.sourceDir %>asset/fonts/']
         },
 
         useminPrepare: {
-            html: '<%= scaffold.sourceDir %>index.html',
+            html: '<%= project.sourceDir %>index.html',
             options: {
-                staging: '<%= scaffold.tmpDir %>',
-                dest: '<%= scaffold.distDir %>'
+                staging: '<%= project.tmpDir %>',
+                dest: '<%= project.distDir %>'
             }
         },
 
         usemin: {
-            html: '<%= scaffold.htmlDir %>index.html'
+            html: '<%= project.htmlDir %>index.html'
         },
 
         ngmin: {
             app: {
-                src: ['<%= scaffold.concatDir %>js/app.js'],
-                dest: '<%= scaffold.concatDir %>js/app.js'
+                src: ['<%= project.concatDir %>js/app.js'],
+                dest: '<%= project.concatDir %>js/app.js'
             }
         },
 
@@ -73,31 +70,31 @@ module.exports = function (grunt) {
                         removeStyleLinkTypeAttributes: true
                     }
                 },
-                src: ['<%= scaffold.sourceDir %>app/**/*.tpl.html'],
-                dest: '<%= scaffold.sourceDir %>app/module/template/template.js'
+                src: ['<%= project.sourceDir %>app/**/*.tpl.html'],
+                dest: '<%= project.sourceDir %>app/module/template/template.js'
             }
         },
 
         copy: {
             fonts: {
                 // Bower fonts
-                cwd: '<%= scaffold.bowerDir %>bootstrap/dist/',
+                cwd: '<%= project.bowerDir %>bootstrap/dist/',
                 src : ['fonts/*.*'],
-                dest: '<%= scaffold.sourceDir %>asset/',
+                dest: '<%= project.sourceDir %>asset/',
                 expand: true
             },
             tmp: {
                 files: [{
                     // HTML index
-                    cwd: '<%= scaffold.sourceDir %>',
+                    cwd: '<%= project.sourceDir %>',
                     src: ['index.html'],
-                    dest: '<%= scaffold.htmlDir %>',
+                    dest: '<%= project.htmlDir %>',
                     expand: true
                 }, {
                     // Assets (fonts, img, ico)
-                    cwd: '<%= scaffold.sourceDir %>',
+                    cwd: '<%= project.sourceDir %>',
                     src : ['asset/**/*.*'],
-                    dest: '<%= scaffold.tmpDir %>',
+                    dest: '<%= project.tmpDir %>',
                     expand: true
                 }]
             },
@@ -105,15 +102,15 @@ module.exports = function (grunt) {
             dist: {
                 files: [{
                     // HTML index and templates
-                    cwd: '<%= scaffold.htmlDir %>',
+                    cwd: '<%= project.htmlDir %>',
                     src : ['index.html'],
-                    dest: '<%= scaffold.distDir %>',
+                    dest: '<%= project.distDir %>',
                     expand: true
                 }, {
                     // Fonts and images
-                    cwd: '<%= scaffold.assetDir %>',
+                    cwd: '<%= project.assetDir %>',
                     src : ['**'],
-                    dest: '<%= scaffold.distDir %>',
+                    dest: '<%= project.distDir %>',
                     expand: true
                 }]
             }
@@ -123,14 +120,14 @@ module.exports = function (grunt) {
             options: {
                 jshintrc: '.jshintrc',
                 ignores: [
-                    '<%= scaffold.concatDir %>**/vendor.js'
+                    '<%= project.concatDir %>**/vendor.js'
                 ]
             },
             default: [
-                '<%= scaffold.sourceDir %>**/*.js',
-                '<%= scaffold.testDir %>**/*.spec.js',
-                '<%= scaffold.testDir %>**/*.scenario.js',
-                '<%= scaffold.testDir %>**/*.conf.js',
+                '<%= project.sourceDir %>**/*.js',
+                '<%= project.testDir %>**/*.spec.js',
+                '<%= project.testDir %>**/*.scenario.js',
+                '<%= project.testDir %>**/*.conf.js',
                 'Gruntfile.js'
             ]
         },
@@ -152,7 +149,7 @@ module.exports = function (grunt) {
             },
             default: {
                 options: {
-                    base: '<%= scaffold.distDir %>',
+                    base: '<%= project.distDir %>',
                     open: true,
                     middleware: function (connect, options) {
                         return [
@@ -170,10 +167,10 @@ module.exports = function (grunt) {
                     livereload: true
                 },
                 files: [
-                    '<%= scaffold.sourceDir %>index.html',
-                    '<%= scaffold.sourceDir %>app/**/*.tpl.html',
-                    '<%= scaffold.sourceDir %>css/*.css',
-                    '<%= scaffold.sourceDir %>**/*.js',
+                    '<%= project.sourceDir %>index.html',
+                    '<%= project.sourceDir %>app/**/*.tpl.html',
+                    '<%= project.sourceDir %>css/*.css',
+                    '<%= project.sourceDir %>**/*.js',
                     'Gruntfile.js'
                 ],
                 tasks: [
