@@ -1,0 +1,42 @@
+{
+    "name": "mayflower-talk-ng-route",
+    "version": "0.1.0",
+    "author": "Norbert Schmidt (nosch)",
+    "description": "Demo app for the Mayflower lightning talk about AngularJS + UI-Router.",
+    "homepage": "http://github.com/nosch/mayflower-talk-ng-route",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:nosch/mayflower-talk-ng-route.git"
+    },
+    "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://raw2.github.com/nosch/mayflower-talk-ng-route/master/LICENSE"
+        }
+    ],
+    "engines": {
+        "node": ">= 0.10.12"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": ">=0.4.2",
+        "bower": ">=1.2.8",
+        "karma": ">=0.10.9",
+        "karma-firefox-launcher": "0.1.3",
+        "time-grunt": ">=0.2.8",
+        "load-grunt-tasks": ">=0.2.1",
+        "connect-livereload": ">=0.3.2",
+        "grunt-karma": ">=0.6.2",
+        "grunt-usemin": ">=2.0.2",
+        "grunt-html2js": "0.2.4",
+        "grunt-contrib-cssmin": ">=0.7.0",
+        "grunt-contrib-clean": ">=0.5.0",
+        "grunt-contrib-copy": ">=0.5.0",
+        "grunt-contrib-concat": ">=0.3.0",
+        "grunt-contrib-uglify": ">=0.2.7",
+        "grunt-contrib-connect": ">=0.6.0",
+        "grunt-contrib-watch": ">=0.5.3",
+        "grunt-contrib-jshint": ">=0.8.0",
+        "grunt-ngmin": "latest"
+    }
+}
