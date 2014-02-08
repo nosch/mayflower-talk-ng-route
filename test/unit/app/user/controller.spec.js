@@ -26,7 +26,7 @@ describe('Unit Testing: User/Controller', function () {
 
             $controller('UserCtrl', params);
 
-            expect($scope.mainHeading).toBe(expected.heading);
+            expect($scope.heading).toBe(expected.heading);
         });
     });
 });
