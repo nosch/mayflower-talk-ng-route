@@ -22,5 +22,5 @@ angular.module('application', [
     .controller('HomeCtrl', function ($scope) {
         'use strict';
 
-        $scope.heading = 'AngularJS + UI-Router!';
+        $scope.heading = 'Mayflower Lightning Talk!';
     });

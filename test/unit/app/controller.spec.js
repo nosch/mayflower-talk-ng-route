@@ -15,9 +15,9 @@ describe('Unit Testing: Application/Controller', function () {
     }));
 
     describe('HomeCtrl', function () {
-        it('should set the correct heading text "AngularJS + UI-Router!"', function () {
+        it('should set the correct heading text "Mayflower Lightning Talk!"', function () {
             var expected = {
-                heading: 'AngularJS + UI-Router!'
+                heading: 'Mayflower Lightning Talk!'
             };
 
             var params = {
