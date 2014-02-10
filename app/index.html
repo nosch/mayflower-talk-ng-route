@@ -57,7 +57,10 @@
             </div>
         </div>
 
-        <div class="ui inverted menu">
+        <div class="ui inverted fixed menu">
+            <a class="icon item launch">
+                <i class="list layout icon"></i>
+            </a>
             <a class="item">
                 <i class="home icon"></i> Home
             </a>
@@ -85,9 +88,6 @@
 
         <div class="ui celled grid">
             <div class="seven wide middle column">
-                <div class="ui right floated black launch button">
-                    <i class="list layout icon"></i> Menu
-                </div>
                 <h2 class="ui header">
                     <i class="inbox icon"></i> Inbox
                 </h2>
@@ -263,7 +263,7 @@
 
                 // Init sidebar module
                 $.fn.sidebar.settings.debug = false;
-                $('.ui.sidebar').sidebar('attach events', '.launch.button');
+                $('.ui.sidebar').sidebar('attach events', '.launch.item');
 
                 // Init tab module
                 $.fn.tab.settings.debug = false;
