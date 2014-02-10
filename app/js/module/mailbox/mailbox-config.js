@@ -12,6 +12,14 @@ angular.module('mailbox.config', [
         $stateProvider
             .state('mailbox', {
                 url: '/mailbox',
-                templateUrl: 'js/module/mailbox/view/mailbox.tpl.html'
-            });
+                templateUrl: 'js/module/mailbox/view/inbox.tpl.html'
+            })
+            .state('mailbox.sent', {
+                url: '/sent',
+                templateUrl: 'js/module/mailbox/view/sent.tpl.html'
+            })
+            .state('mailbox.trash', {
+                url: '/trash',
+                templateUrl: 'js/module/mailbox/view/trash.tpl.html'
+            })
     });

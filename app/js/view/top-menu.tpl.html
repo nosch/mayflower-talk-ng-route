@@ -4,15 +4,15 @@
        class="item">
         <i class="dashboard icon"></i> Dashboard
     </a>
-    <a ui-sref="mailbox"
-       ui-sref-active="active"
-       class="item">
-        <i class="mail icon"></i> Mailbox
-    </a>
     <a ui-sref="contacts"
-       ui-sref-active="active"
+       ng-class="{active: $state.includes('contacts')}"
        class="item">
         <i class="icon users"></i> Contacts
+    </a>
+    <a ui-sref="mailbox"
+       ng-class="{active: $state.includes('mailbox')}"
+       class="item">
+        <i class="mail icon"></i> Mailbox
     </a>
     <a ui-sref="settings"
        ui-sref-active="active"

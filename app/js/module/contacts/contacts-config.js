@@ -13,5 +13,13 @@ angular.module('contacts.config', [
             .state('contacts', {
                 url: '/contacts',
                 templateUrl: 'js/module/contacts/view/contacts.tpl.html'
-            });
+            })
+            .state('contacts.list', {
+                url: '/list',
+                templateUrl: 'js/module/contacts/view/list.tpl.html'
+            })
+            .state('contacts.create', {
+                url: '/create',
+                templateUrl: 'js/module/contacts/view/create.tpl.html'
+            })
     });

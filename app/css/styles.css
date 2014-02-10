@@ -17,9 +17,24 @@ body {
     font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
+h3 {
+    margin-top: 0;
+    padding-top: 0;
+}
+
 /* Top menu */
 #top .ui.menu {
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-radius: 0;
+}
+
+/* Main content area */
+#main {
+    padding: 0 50px
+}
+
+/* Grid */
+.grid .contact {
+    margin-left: 50px;
 }
