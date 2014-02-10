@@ -18,8 +18,8 @@ body {
 }
 
 /* Top menu */
-.ui.inverted.menu {
+#top .ui.menu {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 50px;
     border-radius: 0;
 }
