@@ -16,8 +16,12 @@ angular.module('contacts.config', [
                 abstract: true
            })
             .state('contacts.list', {
-                url: '/list',
-                template: '<h3>Your contacts</h3> <p>...</p>'
+                url: '/list/:lang',
+                templateUrl: function ($stateParams){
+                    var lang = $stateParams.lang || 'en';
+
+                    return 'js/module/contacts/view/list.' + lang + '.tpl.html';
+                }
             })
             .state('contacts.favorites', {
                 url: '/favorites',
