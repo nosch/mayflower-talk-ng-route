@@ -1,27 +1,10 @@
 <div class="ui divided inbox selection list">
-    <a class="active item">
+    <a ui-sref="mailbox.inbox({id: $index})"
+       ui-sref-active="active"
+       ng-repeat="mail in mails"
+       class="item">
         <div class="left floated ui star rating"><i class="active icon"></i></div>
-        <div class="right floated date">13.02.2014</div>
-        <div class="description"><strong>John Doe:</strong> Consequences that are extremely painful!</div>
-    </a>
-    <a class="item">
-        <div class="left floated ui star rating"><i class="active icon"></i></div>
-        <div class="right floated date">09.02.2014</div>
-        <div class="description"><strong>The Bush Doctor:</strong> All this mistaken ideas.</div>
-    </a>
-    <a class="item">
-        <div class="left floated ui star rating"><i class="active icon"></i></div>
-        <div class="right floated date">20.01.2014</div>
-        <div class="description"><strong>Jane Doe:</strong> No one rejects, dislikes, or avoids pleasure.</div>
-    </a>
-    <a class="item">
-        <div class="left floated ui star rating"><i class="active icon"></i></div>
-        <div class="right floated date">10.01.2014</div>
-        <div class="description"><strong>Mrs Robinson:</strong> Because it is pain!</div>
-    </a>
-    <a class="item">
-        <div class="left floated ui star rating"><i class="active icon"></i></div>
-        <div class="right floated date">24.12.2013</div>
-        <div class="description"><strong>Kilroy:</strong> A trivial example.</div>
+        <div class="right floated date">{{mail.date}}</div>
+        <div class="description"><strong>{{mail.from}}:</strong> {{mail.subject}}</div>
     </a>
 </div>

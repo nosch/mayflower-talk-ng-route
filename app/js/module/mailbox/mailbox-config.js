@@ -6,6 +6,28 @@ angular.module('mailbox.config', [
         'ui.router'
     ])
 
+    .constant('MAILS', [{
+        from: 'John Doe',
+        subject: 'Consequences that are extremely painful!',
+        date: '13.02.2014'
+    }, {
+        from: 'The Bush Doctor',
+        subject: 'All this mistaken ideas.',
+        date: '09.02.2014'
+    }, {
+        from: 'Jane Doe',
+        subject: 'No one rejects, dislikes, or avoids pleasure.',
+        date: '20.01.2014'
+    }, {
+        from: 'Mrs Robinson',
+        subject: 'Because it is pain!',
+        date: '10.01.2014'
+    }, {
+        from: 'Kilroy',
+        subject: 'A trivial example.',
+        date: '24.12.2013'
+    }])
+
     .config(function ($stateProvider) {
         'use strict';
 
@@ -18,8 +40,24 @@ angular.module('mailbox.config', [
                 abstract: true
             })
             .state('mailbox.inbox', {
-                url: '/inbox',
-                templateUrl: 'js/module/mailbox/view/inbox.tpl.html'
+                url: '/inbox/:id',
+                views: {
+                    'list': {
+                        templateUrl: 'js/module/mailbox/view/inbox.tpl.html',
+                        controller: 'InboxListCtrl'
+                    },
+                    'detail': {
+                        templateUrl: 'js/module/mailbox/view/detail.tpl.html',
+                        controller: 'InboxDetailCtrl'
+                    }
+                },
+                resolve: {
+                    mail: function ($stateParams, MAILS) {
+                        var id = $stateParams.id || +0
+
+                        return  MAILS[id];
+                    }
+                }
             })
             .state('mailbox.drafts', {
                 url: '/drafts',
