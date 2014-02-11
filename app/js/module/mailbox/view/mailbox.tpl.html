@@ -1,0 +1,40 @@
+<h1 class="header">Mailbox</h1>
+
+<div class="ui grid">
+    <div class="row">
+        <div class="ten wide column">
+            <div class="ui five item tabular filter menu">
+                <a ui-sref="mailbox.inbox"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal inbox icon"></i> Inbox
+                </a>
+                <a ui-sref="mailbox.drafts"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal file outline icon"></i> Drafts
+                </a>
+                <a ui-sref="mailbox.sent"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal upload icon"></i> Sent
+                </a>
+                <a ui-sref="mailbox.spam"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal exclamation icon"></i> Spam
+                </a>
+                <a ui-sref="mailbox.trash"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal trash icon"></i> Trash
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="ten wide column">
+            <section ui-view></section>
+        </div>
+    </div>
+</div>

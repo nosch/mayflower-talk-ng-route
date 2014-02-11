@@ -38,3 +38,21 @@ h3 {
 .grid .contact {
     margin-left: 50px;
 }
+
+/* Inbox */
+#mailbox .inbox {
+    background-color: #FFFFFF;
+}
+
+#mailbox .inbox .item {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#mailbox .inbox .item .rating {
+    margin-top: 0.2rem;
+}
+
+#mailbox .inbox .item .description {
+    margin-left: 2em;
+}
