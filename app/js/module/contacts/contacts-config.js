@@ -12,7 +12,8 @@ angular.module('contacts.config', [
         $stateProvider
             .state('contacts', {
                 url: '/contacts',
-                templateUrl: 'js/module/contacts/view/contacts.tpl.html'
+                templateUrl: 'js/module/contacts/view/contacts.tpl.html',
+                abstract: true
            })
             .state('contacts.list', {
                 url: '/list',
