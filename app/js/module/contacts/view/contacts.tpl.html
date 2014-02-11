@@ -1,23 +1,21 @@
 <h1 class="header">Contacts</h1>
 
-<div class="ui grid">
-    <div class="row">
-        <div class="two wide column">
-            <div class="ui vertical pointing menu">
-                <a ui-sref="contacts.list"
-                   ui-sref-active="active"
-                   class="item">
-                    <i class="teal list layout icon"></i> List contacts
-                </a>
-                <a ui-sref="contacts.create"
-                   ui-sref-active="active"
-                   class="item">
-                    <i class="teal plus icon"></i> Create contact
-                </a>
-            </div>
-        </div>
-        <div class="ten wide column contact">
-            <section ui-view></section>
-        </div>
-    </div>
+<div class="ui secondary pointing menu">
+    <a ui-sref="contacts.list"
+       ui-sref-active="active"
+       class="item">
+        <i class="teal list layout icon"></i> List contacts
+    </a>
+    <a ui-sref="contacts.favorites"
+       ui-sref-active="active"
+       class="item">
+        <i class="teal plus icon"></i> Favorite
+    </a>
+    <a ui-sref="contacts.create"
+       ui-sref-active="active"
+       class="item">
+        <i class="teal plus icon"></i> Create contact
+    </a>
 </div>
+
+<section ui-view></section>

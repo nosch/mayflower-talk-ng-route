@@ -13,13 +13,17 @@ angular.module('contacts.config', [
             .state('contacts', {
                 url: '/contacts',
                 templateUrl: 'js/module/contacts/view/contacts.tpl.html'
-            })
+           })
             .state('contacts.list', {
                 url: '/list',
-                templateUrl: 'js/module/contacts/view/list.tpl.html'
+                template: '<h3>Your contacts</h3> <p>...</p>'
+            })
+            .state('contacts.favorites', {
+                url: '/favorites',
+                template: '<h3>Favorite contacts</h3> <p>...</p>'
             })
             .state('contacts.create', {
                 url: '/create',
-                templateUrl: 'js/module/contacts/view/create.tpl.html'
+                template: '<h3>Create new contact</h3> <p>...</p>'
             })
     });
