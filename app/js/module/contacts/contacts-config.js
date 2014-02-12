@@ -12,8 +12,7 @@ angular.module('contacts.config', [
         $stateProvider
             .state('contacts', {
                 url: '/contacts',
-                templateUrl: 'js/module/contacts/view/contacts.tpl.html',
-                abstract: true
+                templateUrl: 'js/module/contacts/view/contacts.tpl.html'
            })
             .state('contacts.list', {
                 url: '/list/:lang',
@@ -25,10 +24,10 @@ angular.module('contacts.config', [
             })
             .state('contacts.favorites', {
                 url: '/favorites',
-                template: '<h3>Favorite contacts</h3> <p>...</p>'
+                template: '<h2 class="ui header">Favorite contacts</h2> <p><i class="ellipsis horizontal icon"></i></p>'
             })
             .state('contacts.create', {
                 url: '/create',
-                template: '<h3>Create new contact</h3> <p>...</p>'
+                template: '<h2 class="ui header">Create new contact</h2> <p><i class="ellipsis horizontal icon"></i></p>'
             })
     });
