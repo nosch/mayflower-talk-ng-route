@@ -7,7 +7,8 @@ angular.module('application.config', [
         'contacts',
         'settings',
         'help',
-        'ui.router'
+        'ui.router',
+        'hljs'
     ])
 
     .config(function ($stateProvider, $urlRouterProvider) {

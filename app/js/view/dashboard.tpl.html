@@ -30,15 +30,24 @@
                     </div>
                 </div>
                 <div class="column">
-                    <div class="ui labeled vertical fluid icon menu">
-                        <a ui-sref="contacts.list"
-                           class="item">
-                            <i class="teal users icon"></i> Contacts <i>State Manager</i>
-                        </a>
-                        <a ui-sref="mailbox.inbox"
-                           class="item">
-                            <i class="teal mail icon"></i> Mailbox <i>Nested States / Named views</i>
-                        </a>
+                    <div class="ui segment">
+                        <div class="ui top right attached label">
+                            JavaScript <i class="large code icon"></i>
+                        </div>
+                        <div hljs
+                             language="javascript">
+                            .config(function ($stateProvider, $urlRouterProvider) {
+                                'use strict';
+
+                                $urlRouterProvider.otherwise('/dashboard');
+
+                                $stateProvider
+                                    .state('dashboard', {
+                                    url: '/dashboard',
+                                    templateUrl: 'js/view/dashboard.tpl.html'
+                                });
+                            });
+                        </div>
                     </div>
                 </div>
             </div>
