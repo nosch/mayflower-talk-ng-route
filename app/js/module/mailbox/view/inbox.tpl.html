@@ -1,5 +1,5 @@
 <div class="ui divided inbox selection list">
-    <a ui-sref="mailbox.inbox({id: $index})"
+    <a ui-sref="mailbox.inbox({id: $index + 1})"
        ui-sref-active="active"
        ng-repeat="mail in mails"
        class="item">
@@ -8,3 +8,33 @@
         <div class="description"><strong>{{mail.from}}:</strong> {{mail.subject}}</div>
     </a>
 </div>
+
+<br/>
+
+<div class="ui small button">
+    <i class="forward mail icon"></i> Forward
+</div>
+<div class="ui small button">
+    <i class="archive icon"></i> Archive
+</div>
+<div class="ui small button">
+    <i class="trash icon"></i> Delete
+</div>
+
+<div class="ui divider"></div>
+
+<div class="ui top attached segment">
+    <strong>From:</strong> {{detail.from}}
+</div>
+<div class="ui attached segment">
+    <strong>Subject:</strong> {{detail.subject}}
+</div>
+<div class="ui attached segment">
+    <strong>Date:</strong> {{detail.date}}
+</div>
+
+<p>Dear Sir or Madam,</p>
+
+<p>...</p>
+
+<p><strong>Kind regards</strong></p>

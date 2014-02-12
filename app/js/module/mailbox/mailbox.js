@@ -6,14 +6,9 @@ angular.module('mailbox', [
         'mailbox.config'
     ])
 
-    .controller('InboxListCtrl', function ($scope, MAILS) {
+    .controller('InboxListCtrl', function ($scope, MAILS, mail) {
         'use strict';
 
         $scope.mails = MAILS;
-    })
-
-    .controller('InboxDetailCtrl', function ($scope, mail) {
-        'use strict';
-
         $scope.detail = mail;
     });

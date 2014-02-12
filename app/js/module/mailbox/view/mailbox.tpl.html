@@ -1,47 +1,84 @@
-<h1 class="header">Mailbox</h1>
+<h1 class="ui header">
+    Mailbox
+    <span class="sub header">Nested States</span>
+</h1>
 
 <div class="ui grid">
-    <div class="seven wide column">
+    <div class="eight wide column">
         <div class="row">
-            <div class="six wide column">
-                <div class="ui five item tabular filter menu">
-                    <a ui-sref="mailbox.inbox"
-                       ui-sref-active="active"
-                       class="item">
-                        <i class="teal inbox icon"></i> Inbox
-                    </a>
-                    <a ui-sref="mailbox.drafts"
-                       ui-sref-active="active"
-                       class="item">
-                        <i class="teal file outline icon"></i> Drafts
-                    </a>
-                    <a ui-sref="mailbox.sent"
-                       ui-sref-active="active"
-                       class="item">
-                        <i class="teal upload icon"></i> Sent
-                    </a>
-                    <a ui-sref="mailbox.spam"
-                       ui-sref-active="active"
-                       class="item">
-                        <i class="teal exclamation icon"></i> Spam
-                    </a>
-                    <a ui-sref="mailbox.trash"
-                       ui-sref-active="active"
-                       class="item">
-                        <i class="teal trash icon"></i> Trash
-                    </a>
-                </div>
+            <div class="ui five item tabular filter menu">
+                <a ui-sref="mailbox.inbox"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal inbox icon"></i> Inbox
+                </a>
+                <a ui-sref="mailbox.drafts"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal file outline icon"></i> Drafts
+                </a>
+                <a ui-sref="mailbox.sent"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal upload icon"></i> Sent
+                </a>
+                <a ui-sref="mailbox.spam"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal exclamation icon"></i> Spam
+                </a>
+                <a ui-sref="mailbox.trash"
+                   ui-sref-active="active"
+                   class="item">
+                    <i class="teal trash icon"></i> Trash
+                </a>
             </div>
         </div>
 
         <div class="row">
-            <div class="six wide column">
-                <section ui-view="list"></section>
-            </div>
+            <section ui-view></section>
         </div>
     </div>
 
-    <div class="seven wide right column">
-        <section ui-view="detail"></section>
+    <div class="eight wide right column">
+        <div class="row">
+            <div class="ui segment">
+                <div class="ui top right attached label">
+                    HTML <i class="large code icon"></i>
+                </div>
+                <div hljs
+                     language="html">
+                    <ul>
+                        <li>Ha ha!</li>
+                        <li>He he!</li>
+                        <li>Hi hi!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+
+        <div class="row">
+            <div class="ui segment">
+                <div class="ui top right attached label">
+                    JS <i class="large code icon"></i>
+                </div>
+                <div hljs
+                     language="javascript">
+                    .config(function ($stateProvider, $urlRouterProvider) {
+                        'use strict';
+
+                        $urlRouterProvider.otherwise('/dashboard');
+
+                        $stateProvider
+                            .state('dashboard', {
+                            url: '/dashboard',
+                            templateUrl: 'js/view/dashboard.tpl.html'
+                        });
+                    });
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
     </div>
 </div>

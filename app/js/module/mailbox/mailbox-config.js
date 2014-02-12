@@ -31,7 +31,7 @@ angular.module('mailbox.config', [
     .config(function ($stateProvider) {
         'use strict';
 
-        var template = '<p>...</p>';
+        var template = '<p><i class="ellipsis horizontal icon"></i></p>';
 
         $stateProvider
             .state('mailbox', {
@@ -41,19 +41,11 @@ angular.module('mailbox.config', [
             })
             .state('mailbox.inbox', {
                 url: '/inbox/:id',
-                views: {
-                    'list': {
-                        templateUrl: 'js/module/mailbox/view/inbox.tpl.html',
-                        controller: 'InboxListCtrl'
-                    },
-                    'detail': {
-                        templateUrl: 'js/module/mailbox/view/detail.tpl.html',
-                        controller: 'InboxDetailCtrl'
-                    }
-                },
+                templateUrl: 'js/module/mailbox/view/inbox.tpl.html',
+                controller: 'InboxListCtrl',
                 resolve: {
                     mail: function ($stateParams, MAILS) {
-                        var id = $stateParams.id || +0
+                        var id = $stateParams.id - 1;
 
                         return  MAILS[id];
                     }
