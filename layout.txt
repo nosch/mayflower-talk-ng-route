@@ -1,0 +1,35 @@
+<div class="ui segment">
+    <div class="ui top right attached label">
+        JavaScript <i class="large code icon"></i>
+    </div>
+    <div hljs
+         language="javascript">
+        .config(function ($stateProvider, $urlRouterProvider) {
+            'use strict';
+
+            $urlRouterProvider.otherwise('/dashboard');
+
+            $stateProvider
+                .state('dashboard', {
+                url: '/dashboard',
+                templateUrl: 'js/view/dashboard.tpl.html'
+            });
+        });
+    </div>
+</div>
+
+<div class="ui grid">
+    <div class="eight wide column">
+        <div class="row">
+            <div class="ui message">LEFT</div>
+        </div>
+
+        <div class="row">
+            <p>...</p>
+        </div>
+    </div>
+
+    <div class="eight wide right column">
+        <div class="ui message">RIGHT</div>
+    </div>
+</div>
