@@ -1,3 +1,58 @@
-<h1 class="ui header">Settings</h1>
+<h1 class="ui header">
+    Settings
+    <span class="sub header">Multiple Named Views</span>
+</h1>
 
-<p>...</p>
+<div class="ui grid">
+    <div class="eight wide column">
+        <div class="row">
+            <section ui-view="one"></section>
+        </div>
+
+        <div class="row">
+            <section ui-view="two"></section>
+        </div>
+    </div>
+
+    <div class="eight wide right column">
+        <div class="row">
+            <div class="ui segment">
+                <div class="ui top right attached label">
+                    HTML <i class="large code icon"></i>
+                </div>
+                <div hljs
+                     language="html">
+                    <ul>
+                        <li>Ha ha!</li>
+                        <li>He he!</li>
+                        <li>Hi hi!</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+
+        <div class="row">
+            <div class="ui segment">
+                <div class="ui top right attached label">
+                    JS <i class="large code icon"></i>
+                </div>
+                <div hljs
+                     language="javascript">
+                    .config(function ($stateProvider, $urlRouterProvider) {
+                        'use strict';
+
+                        $urlRouterProvider.otherwise('/dashboard');
+
+                        $stateProvider
+                            .state('dashboard', {
+                                url: '/dashboard',
+                                templateUrl: 'js/view/dashboard.tpl.html'
+                            });
+                    });
+                </div>
+            </div>
+            <div class="divider"></div>
+        </div>
+    </div>
+</div>

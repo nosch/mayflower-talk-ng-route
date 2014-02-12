@@ -14,8 +14,8 @@
        class="item">
         <i class="mail icon"></i> Mailbox
     </a>
-    <a ui-sref="settings"
-       ui-sref-active="active"
+    <a ui-sref="settings.first"
+       ng-class="{active: $state.includes('settings')}"
        class="item">
         <i class="icon setting"></i> Settings
     </a>
