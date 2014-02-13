@@ -48,11 +48,29 @@
                 </div>
                 <div hljs
                      language="html">
-                    <ul>
-                        <li>Ha ha!</li>
-                        <li>He he!</li>
-                        <li>Hi hi!</li>
-                    </ul>
+                    ...
+
+                    <!-- Link im Top-Menu -->
+                    <a ui-sref="mailbox.inbox"
+                       ng-class="{active: $state.includes('mailbox')}">
+                       Mailbox
+                    </a>
+
+                    ...
+
+                    <!-- Tab Link-->
+                    <a ui-sref="mailbox.inbox"
+                       ui-sref-active="active">
+                        Inbox
+                    </a>
+
+                    ...
+
+                    <!-- Detail Link -->
+                    <a ui-sref="mailbox.inbox({id: mail.id})"
+                       ui-sref-active="active">
+                        {{mail.from}}: {{mail.subject}}
+                    </a>
                 </div>
             </div>
             <div class="divider"></div>
@@ -65,17 +83,30 @@
                 </div>
                 <div hljs
                      language="javascript">
-                    .config(function ($stateProvider, $urlRouterProvider) {
+                    ...
+
+                    // State- und Routen-Konfiguration
+                    .config(function ($stateProvider) {
                         'use strict';
 
-                        $urlRouterProvider.otherwise('/dashboard');
-
                         $stateProvider
-                            .state('dashboard', {
-                            url: '/dashboard',
-                            templateUrl: 'js/view/dashboard.tpl.html'
-                        });
-                    });
+                            .state('mailbox', {
+                                url: '/mailbox',
+                                templateUrl: 'view/mailbox.tpl.html',
+                                abstract: true
+                            })
+                            .state('mailbox.inbox', {
+                                url: '/inbox/:id',
+                                templateUrl: 'view/inbox.tpl.html',
+                                controller: 'ListCtrl'
+                            }
+                            .state('mailbox.drafts', {
+                                url: '/drafts',
+                                templateUrl: 'view/drafts.tpl.html',
+                            })
+
+                            ...
+                    )}
                 </div>
             </div>
             <div class="divider"></div>
