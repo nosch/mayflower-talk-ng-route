@@ -22,11 +22,10 @@
                 </div>
                 <div hljs
                      language="html">
-                    <ul>
-                        <li>Ha ha!</li>
-                        <li>He he!</li>
-                        <li>Hi hi!</li>
-                    </ul>
+                    <!-- Views mit Namen -->
+                    <section ui-view="one"></section>
+
+                    <section ui-view="two"></section>
                 </div>
             </div>
             <div class="divider"></div>
@@ -39,17 +38,46 @@
                 </div>
                 <div hljs
                      language="javascript">
-                    .config(function ($stateProvider, $urlRouterProvider) {
+                    ...
+
+                    // State- und Routen-Konfiguration
+                    .config(function ($stateProvider) {
                         'use strict';
 
-                        $urlRouterProvider.otherwise('/dashboard');
-
                         $stateProvider
-                            .state('dashboard', {
-                                url: '/dashboard',
-                                templateUrl: 'js/view/dashboard.tpl.html'
+                            .state('settings', {
+                                url: '/settings',
+                                templateUrl: 'view/settings.tpl.html',
+                                abstract: true
+                            })
+                            .state('settings.first', {
+                                url: '/first',
+                                views: {
+                                    'one': {
+                                        templateUrl: 'view/first/one.tpl.html'
+                                    },
+                                    'two': {
+                                        templateUrl: 'view/first/two.tpl.html'
+                                    }
+                                }
+                            })
+
+                            ...
+
+                            .state('settings.second.more', {
+                                url: '/more',
+                                views: {
+                                    'more01': {
+                                        templateUrl: 'view/more/more-01.tpl.html'
+                                    },
+                                    'more02': {
+                                        templateUrl: 'view/more/more-02.tpl.html'
+                                    }
+                                }
                             });
                     });
+
+                    ...
                 </div>
             </div>
             <div class="divider"></div>
