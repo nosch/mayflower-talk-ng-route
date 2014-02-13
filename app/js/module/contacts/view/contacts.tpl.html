@@ -40,11 +40,19 @@
                 </div>
                 <div hljs
                      language="html">
-                    <ul>
-                        <li>Ha ha!</li>
-                        <li>He he!</li>
-                        <li>Hi hi!</li>
-                    </ul>
+                    ...
+                    <!-- Menu Link -->
+                    <a ui-sref="contacts.list"
+                       ui-sref-active="active">
+                        List contacts
+                    </a>
+
+                    ...
+
+                    <!-- Button fuer Sprachumschaltung -->
+                    <a ui-sref="contacts.list({lang: 'de'})">
+                        Change language: German
+                    </a>
                 </div>
             </div>
             <div class="divider"></div>
@@ -57,16 +65,35 @@
                 </div>
                 <div hljs
                      language="javascript">
-                    .config(function ($stateProvider, $urlRouterProvider) {
+                    // $state global verfuegbar machen
+                    .run(function ($rootScope, $state, $stateParams) {
                         'use strict';
 
-                        $urlRouterProvider.otherwise('/dashboard');
+                        $rootScope.$state = $state;
+                        $rootScope.$stateParams = $stateParams;
+                    });
+
+                    ...
+
+                    // State- und Routen-Konfiguration
+                    .config(function ($stateProvider) {
+                        'use strict';
 
                         $stateProvider
-                            .state('dashboard', {
-                            url: '/dashboard',
-                            templateUrl: 'js/view/dashboard.tpl.html'
-                        });
+                            .state('contacts', {
+                                url: '/contacts',
+                                templateUrl: 'view/contacts.tpl.html'
+                            })
+                            .state('contacts.list', {
+                                url: '/list/:lang',
+                                templateUrl: function ($stateParams){
+                                    var lang = $stateParams.lang || 'en';
+
+                                    return 'view/list.' + lang + '.tpl.html';
+                                }
+                            })
+
+                            ...
                     });
                 </div>
             </div>
