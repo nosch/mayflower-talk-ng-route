@@ -1,4 +1,4 @@
 mayflower-talk-ng-route
 =======================
 
-Demo app for the Mayflower lightning talk about UI-Router: http://ui-router.schmidt-netzwerk.de
+UI-Router demo app for the Mayflower lightning talks: http://ui-router.schmidt-netzwerk.de
