@@ -1,8 +1,8 @@
 {
-    "name": "ng-mailbox",
+    "name": "mayflower-talk-ng-route",
     "version": "0.1.0",
     "author": "Norbert Schmidt (nosch)",
-    "description": "The mailbox - a small AngularJS demo application.",
+    "description": "UI-Router-Demo - a small AngularJS demo application.",
     "engines": {
         "node": ">= 0.10.22"
     },
