@@ -13,7 +13,7 @@ angular.module('contacts.config', [
             .state('contacts', {
                 url: '/contacts',
                 templateUrl: 'js/module/contacts/view/contacts.tpl.html'
-           })
+            })
             .state('contacts.list', {
                 url: '/list/:lang',
                 templateUrl: function ($stateParams){
